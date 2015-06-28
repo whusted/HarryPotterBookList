@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="waK-bo-Vig">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hsv-ru-qBC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Book List View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="4Zc-5o-ta4">
+            <objects>
+                <navigationController id="hsv-ru-qBC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vqQ-wN-rkW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="waK-bo-Vig" kind="relationship" relationship="rootViewController" id="8JA-2R-j0v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Is2-o2-FKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-247" y="418"/>
+        </scene>
+        <!--Harry Potter Products-->
         <scene sceneID="ina-72-4vh">
             <objects>
                 <tableViewController id="waK-bo-Vig" customClass="BookListViewController" sceneMemberID="viewController">
@@ -25,10 +41,11 @@
                             <outlet property="delegate" destination="waK-bo-Vig" id="OHf-z1-rmi"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Harry Potter Products" id="R8y-Ss-S8L"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z1Z-7x-Lzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490" y="430"/>
+            <point key="canvasLocation" x="490" y="418"/>
         </scene>
     </scenes>
 </document>

@@ -17,13 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getListOfBooks];
+    // Progress indicator displayed
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Loading";
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self getListOfBooks];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // remove progress indicator
+            [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+        });
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
